@@ -30,12 +30,24 @@ public class UI extends PApplet
 	public void setup() 
 	{
 		loadColours();
+		loadResistors();
 		printColours();
 	}
 	
 	public void draw()
-	{		
+	{
+		int x1 = 150;
+		int y1 = 50;
+		int x2 = 200;
+		int y2 = 100;
+		
+		
 
+		
+		for(int i = 0; i<=4;i++)
+		{
+			rect(x1,y1,x2,y2);
+		}
 	}
 
 	public void loadColours()
@@ -49,6 +61,18 @@ public class UI extends PApplet
 
 	}
 
+	public void loadResistors()
+	{
+		/*
+		Table table = loadTable("resistors.csv", "header");
+		for(TableRow row: table.rows())
+		{
+			Resistor resistor = new Resistor(row);
+			resistor.add(resistor);
+		}
+		*/
+	}
+
 	public void printColours()
 	{
 		for(Colour colour: colours)
@@ -56,13 +80,16 @@ public class UI extends PApplet
 			System.out.println(colour);
 		}
 	}
+	
 	/*
 	public Colour findColour(int value)
 	{
-		for()
+		
 		System.out.println(value.ArrayList<Colour>colours); 
 
 	}
 	*/
 	private ArrayList<Colour> colours = new ArrayList<Colour>();
+	private ArrayList<Resistor> resistors = new ArrayList<Resistor>();
 }
+

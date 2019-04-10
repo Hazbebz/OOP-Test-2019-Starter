@@ -29,7 +29,8 @@ public class UI extends PApplet
 
 	public void setup() 
 	{
-		loadData();
+		loadColours();
+		printColours();
 	}
 	
 	public void draw()
@@ -37,16 +38,31 @@ public class UI extends PApplet
 
 	}
 
-	public void loadData()
+	public void loadColours()
 	{
 		Table table = loadTable("colours.csv", "header");
 		for(TableRow row: table.rows())
 		{
 			Colour colour = new Colour(row);
-			System.out.println(colour);
+			colours.add(colour);
 		}
 
 	}
 
-	private ArrayList<Colour> stars = new ArrayList<Colour>();
+	public void printColours()
+	{
+		for(Colour colour: colours)
+		{
+			System.out.println(colour);
+		}
+	}
+	/*
+	public Colour findColour(int value)
+	{
+		for()
+		System.out.println(value.ArrayList<Colour>colours); 
+
+	}
+	*/
+	private ArrayList<Colour> colours = new ArrayList<Colour>();
 }
